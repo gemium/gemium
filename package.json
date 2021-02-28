@@ -1,0 +1,27 @@
+{
+  "name": "gemini-electron",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build:pack": "electron-builder --dir",
+    "build:all": "electron-builder -mwl"
+  },
+  "keywords": [],
+  "author": "Binyamin Aron Green (https://binyam.in/)",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar": "^3.5.1",
+    "electron": "^11.3.0",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "@derhuerst/gemini": "^1.1.1",
+    "electron-debug": "^3.2.0",
+    "electron-unhandled": "^3.0.2",
+    "electron-util": "^0.14.2"
+  }
+}
