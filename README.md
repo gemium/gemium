@@ -14,7 +14,7 @@
 
 ## Develop
 Requires [Node.js](https://nodejs.dev) and [Git](https://git-scm.com/).
-```console
+```sh
 git clone https://github.com/binyamin/gemium.git
 cd gemium
 npm install
@@ -22,4 +22,4 @@ npm install
 At this point, you can run the app with `npm start`.
 
 ## Legal
-[MIT](./LICENSE) ©️ 2021 [Binyamin Aron Green](https://binyam.in)
+[MIT](./LICENSE) © 2021 [Binyamin Aron Green](https://binyam.in)
