@@ -1,0 +1,82 @@
+/* Application-level styles */
+
+/* Global */
+body {
+    margin: 0;
+}
+
+*:focus {
+    outline-color: steelblue;
+}
+
+/* (1) Header (toolbar, buttons, address-bar) */
+header {
+    border-bottom: 1px solid #ccc;
+    padding: 8px 24px;
+}
+
+.toolbar {
+    display: flex;
+}
+
+.btn {
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    place-items: center;
+    border-radius: 999px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.address {
+    margin: 0 48px;
+    padding: 6px 0 6px 8px;
+    flex-grow: 1;
+    display: flex;
+    border-radius: 999px;
+    box-shadow: inset 0 1px 3px 2px rgba(0,0,0,0.14);
+}
+
+.address:focus-within {
+    outline: steelblue auto 1px;
+}
+
+.address__security {
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+}
+
+.address__security:hover {
+    background-color: #ddd;
+}
+
+.address__security:not([data-locked]) {
+    color: #555;
+}
+
+.address__security[data-locked] {
+    color: darkgreen;
+}
+
+.address__security:not([data-locked]) .bx-lock-alt {
+    display: none;
+}
+
+.address__security[data-locked] .bx-lock-open-alt {
+    display: none;
+}
+
+.address__entry {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+}
+
+.address__entry:focus {
+    outline: none;
+}

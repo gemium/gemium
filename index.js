@@ -4,7 +4,6 @@ const { is } = require("electron-util");
 const unhandled = require("electron-unhandled");
 const debug = require("electron-debug");
 const { watch } = require("chokidar");
-const { isUndefined } = require("util");
 
 unhandled();
 debug({showDevTools: false});
