@@ -5,6 +5,7 @@ const remoteUrl = "gemini://gemini.circumlunar.space/docs/cheatsheet.gmi";
 const localUrl = path.resolve(process.cwd(), "mocks", "localFile.gmi");
 
 // Dispatch actions
+// TODO entry history/suggestions
 document.getElementById("address").addEventListener("keydown", (evt) => {
     if(evt.code === "Enter") {
         try {
@@ -14,3 +15,5 @@ document.getElementById("address").addEventListener("keydown", (evt) => {
         }
     }
 })
+
+// actions.doLoadUrl("gemini://gemini.circumlunar.space/")

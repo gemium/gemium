@@ -31,18 +31,21 @@ function add(token) {
         case 'link':
             // TODO add classes for different types of links
             // TODO mark external links
-            element = document.createElement("a");
-            element.href = token.url;
-            element.innerText = token.value;
-            if(/^https?/.test(element.href)) {
-                element.onclick = (evt) => {
+            element = document.createElement("p");
+            let a =  document.createElement("a");
+            a.href = token.url;
+            a.innerText = token.value;
+            if(/^https?/.test(a.href)) {
+                a.onclick = (evt) => {
                     evt.preventDefault();
-                    shell.openExternal(element.href);
+                    shell.openExternal(a.href);
                 }
 
                 // TODO does the next line do anything?
-                element.relList.add("noopener", "noreferrer");
+                a.relList.add("noopener", "noreferrer");
             }
+
+            element.appendChild(a);
             break;
         case 'quote':
             element = document.createElement("blockquote");

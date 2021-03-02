@@ -3,6 +3,11 @@
 /* Global */
 body {
     margin: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 *:focus {
@@ -13,6 +18,7 @@ body {
 header {
     border-bottom: 1px solid #ccc;
     padding: 8px 24px;
+    background-color: #fff;
 }
 
 .toolbar {
@@ -78,4 +84,9 @@ header {
 
 .address__entry:focus {
     outline: none;
+}
+
+main {
+    overflow: auto;
+    flex: 1;
 }
