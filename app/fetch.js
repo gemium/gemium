@@ -8,7 +8,7 @@ const defaultOpts = {
     }
 }
 
-function gemfetch() {
+function gemfetch(url) {
     return new Promise((resolve, reject) => {
 
         request(url, defaultOpts, (err, res) => {

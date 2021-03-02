@@ -1,6 +1,6 @@
 const {shell} = require("electron");
 
-function addToDom(token) {
+function add(token) {
     const root = document.getElementById("root");
 
     let element;
@@ -63,4 +63,14 @@ function addToDom(token) {
     if(!!element) root.appendChild(element);
 }
 
-module.exports = addToDom;
+function renderAst(ast) {
+    // Clear page
+    const range = document.createRange();
+    range.selectNodeContents(document.getElementById("root"));
+    range.deleteContents();
+
+    // Render page
+    ast.forEach(t => add(t));
+}
+
+module.exports = renderAst;

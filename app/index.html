@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href='https://unpkg.com/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="document.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/document.css">
     <script defer src="main.js"></script>
 </head>
 <body>
     <header>
         <nav class="toolbar">
             <button class="btn">
-                <i class="bx bx-left-arrow-alt"></i>
+                <svg width="24" height="24">
+                    <title>Go Back</title>
+                    <use xlink:href="assets/sprites.svg#icon-left-arrow"/>
+                </svg>
             </button>
             <button class="btn">
-                <i class="bx bx-right-arrow-alt"></i>
+                <svg width="24" height="24">
+                    <title>Go Forward</title>
+                    <use xlink:href="assets/sprites.svg#icon-right-arrow"/>
+                </svg>
             </button>
             <button class="btn">
-                <i class="bx bx-refresh"></i>
+                <svg width="24" height="24">
+                    <title>Refresh the page</title>
+                    <use xlink:href="assets/sprites.svg#icon-refresh"/>
+                </svg>
             </button>
             <div class="address">
-                <button class="address__security" data-locked>
-                    <i class="bx bx-lock-alt"></i>
-                    <i class="bx bx-lock-open-alt"></i>
+                <button class="address__security">
+                    <svg width="16" height="16" class="icon--lock-closed">
+                        <title>Connection secured with SSL</title>
+                        <use xlink:href="assets/sprites.svg#icon-lock"/>
+                    </svg>
+                    <svg width="16" height="16" class="icon--lock-open">
+                        <title>Connection not secured with SSL</title>
+                        <use xlink:href="assets/sprites.svg#icon-lock-open" />
+                    </svg>
                 </button>
-                <input type="text" class="address__entry">
+                <input type="text" class="address__entry" id="address">
             </div>
             <button class="btn">
-                <i class="bx bx-dots-vertical"></i>
+                <svg width="24" height="24">
+                    <title>Open the Menu</title>
+                    <use xlink:href="assets/sprites.svg#icon-dots-vertical"/>
+                </svg>
             </button>
         </nav>
     </header>
     <main id="root">
         <!-- gemini content goes here -->
+        Placeholder: New tab page
+        <ul>
+            <li><a href="gemini://gemini.circumlunar.space/">Project Gemini</a></li>
+        </ul>
     </main>
 </body>
 </html>

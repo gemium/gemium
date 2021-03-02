@@ -20,7 +20,6 @@ header {
 }
 
 .btn {
-    font-size: 20px;
     border: none;
     background-color: transparent;
     display: flex;
@@ -55,19 +54,19 @@ header {
     background-color: #ddd;
 }
 
-.address__security:not([data-locked]) {
-    color: #555;
+.address__security .icon--lock-open {
+    fill: #555;
 }
 
-.address__security[data-locked] {
-    color: darkgreen;
+.address__security .icon--lock-closed {
+    fill: darkgreen;
 }
 
-.address__security:not([data-locked]) .bx-lock-alt {
+.address__security:not([data-locked]) .icon--lock-closed {
     display: none;
 }
 
-.address__security[data-locked] .bx-lock-open-alt {
+.address__security[data-locked] .icon--lock-open {
     display: none;
 }
 

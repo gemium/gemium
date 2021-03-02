@@ -84,6 +84,7 @@ app.on("activate", async () => {
 });
 
 (async () => {
+    // TODO open gemini links in-app
     try {
         await app.whenReady();
         mainWindow = await createMainWindow();
