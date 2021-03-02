@@ -23,7 +23,7 @@ function parse(doc) {
      *
      */
 
-    const lines = doc.split(/$/m).map(d => d.trim());
+    const lines = doc.split(/\r?\n/m).map(d => d.trim());
     let tokens = [];
 
     let modeIsPre = false;
