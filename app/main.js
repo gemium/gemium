@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-// const gemfetch = require("./fetch");
+const gemfetch = require("./fetch");
 const gemparse = require("./parser");
 const addToDom = require("./addToDom");
 
