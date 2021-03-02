@@ -41,6 +41,7 @@ function parse(doc) {
                 ln = ln.replace(/^`{3}\s*/, "")
             } else {
                 tokens.push({type: "pre", value: preText.join("\n"), alt: preAlt})
+                preText = [];
             }
             continue;
         }
