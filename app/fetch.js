@@ -10,6 +10,9 @@ const defaultOpts = {
 
 function gemfetch(url) {
     return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("request timed out")
+        }, 5000)
 
         request(url, defaultOpts, (err, res) => {
             if(err) {

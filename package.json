@@ -22,7 +22,8 @@
     "@derhuerst/gemini": "^1.1.1",
     "electron-debug": "^3.2.0",
     "electron-unhandled": "^3.0.2",
-    "electron-util": "^0.14.2"
+    "electron-util": "^0.14.2",
+    "file-url": "^3.0.0"
   },
   "repository": {
     "type": "git",
