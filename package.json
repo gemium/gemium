@@ -1,7 +1,7 @@
 {
-  "name": "gemini-electron",
+  "name": "gemium",
   "version": "0.1.0",
-  "description": "",
+  "description": "A pretty (imho) desktop app for browsing the gemini universe.",
   "main": "index.js",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
@@ -23,5 +23,13 @@
     "electron-debug": "^3.2.0",
     "electron-unhandled": "^3.0.2",
     "electron-util": "^0.14.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/binyamin/gemium.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/binyamin/gemium/issues"
+  },
+  "homepage": "https://gitlab.com/binyamin/gemium#readme"
 }
