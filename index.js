@@ -24,7 +24,7 @@ try {
     throw new Error(error);
 }
 
-app.setAppUserModelId("com.github.binyamin.gemview");
+app.setAppUserModelId("com.binyamingreen.gemium");
 
 // autoupdater stuff goes here...
 
