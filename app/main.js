@@ -1,18 +1,14 @@
-// const path = require("path");
+if(!window.gemium) throw new Error("Gemium api not loaded");
 
-// const remoteUrl = "gemini://gemini.circumlunar.space/docs/cheatsheet.gmi";
-// const localUrl = path.resolve(process.cwd(), "mocks", "localFile.gmi");
-
-// Dispatch actions
-// TODO entry history/suggestions
+// TODO typing suggestions based on user history
 document.getElementById("address").addEventListener("keydown", (evt) => {
     if(evt.code === "Enter") {
-        try {
-            gemium.load(evt.target.value);
-        } catch (e) {
-            throw e;
-        }
+        const root = document.getElementById("root");
+
+        const range = document.createRange();
+        range.selectNodeContents(root);
+        range.deleteContents();
+
+        renderPage(evt.target.value);
     }
 })
-
-gemium.load("gemini://gemini.circumlunar.space/")

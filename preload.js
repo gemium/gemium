@@ -1,19 +1,17 @@
 const fs = require("fs");
 const fileUrl = require("file-url");
+const { contextBridge } = require("electron");
 const fetch = require("./lib/fetch");
 const parse = require("./lib/parser");
-const render = require("./lib/render");
 
-contextBridge.exposeInMainWorld("gemium", {
-    foo: "bar"
-});
 
-async function load(url) {
+async function getPage(url) {
     let doc;
 
     if(fs.existsSync(url)) {
         doc = fs.readFileSync(fileUrl(url), { encoding: "utf-8" });
     } else if (url.startsWith("gemini://")) {
+        // TODO assume the protocol is "gemini://"
         doc = await fetch(url);
     } else {
         // TODO handle gracefully (display as plain-text?)
@@ -21,7 +19,7 @@ async function load(url) {
     }
 
     const ast = parse(doc);
-    render(ast);
+    return ast;
 }
 
 function goBack() {
@@ -35,9 +33,8 @@ function goForward() {
 function refresh() {
     console.log("Refreshing page...")
 }
-module.exports = {
-    load,
-    goBack,
-    goForward,
-    refresh
-}
+
+contextBridge.exposeInMainWorld("gemium", {
+    getPage: getPage,
+    // history: {},
+});

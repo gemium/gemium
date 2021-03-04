@@ -1,8 +1,9 @@
-const {shell} = require("electron");
+// gemini://gemini.circumlunar.space/docs/cheatsheet.gmi
+//../mocks/localFile.gmi
 
-function add(token) {
-    const root = document.getElementById("root");
+if(!window.gemium) throw new Error("Gemium api not loaded");
 
+function createNode(token) {
     let element;
     switch (token.type) {
         case 'heading_1':
@@ -35,12 +36,7 @@ function add(token) {
             let a =  document.createElement("a");
             a.href = token.url;
             a.innerText = token.value;
-            if(/^https?/.test(a.href)) {
-                a.onclick = (evt) => {
-                    evt.preventDefault();
-                    shell.openExternal(a.href);
-                }
-
+            if(/^https?:\/\//.test(a.href)) {
                 // TODO does the next line do anything?
                 a.relList.add("noopener", "noreferrer");
             }
@@ -60,20 +56,20 @@ function add(token) {
             }
             break;
         default:
-            console.log(token.type + " not added");
+            throw new Error(`Received unknown token type: "${token.type}"`);
     }
 
-    if(!!element) root.appendChild(element);
+    return element;
 }
 
-function renderAst(ast) {
-    // Clear page
-    const range = document.createRange();
-    range.selectNodeContents(document.getElementById("root"));
-    range.deleteContents();
 
-    // Render page
-    ast.forEach(t => add(t));
+function renderPage(url) {
+    gemium.getPage(url)
+    .then(ast => {
+        ast.forEach(token => {
+            root.appendChild(createNode(token));
+        })
+    }).catch(err => {
+        throw new Error(err);
+    })
 }
-
-module.exports = renderAst;
