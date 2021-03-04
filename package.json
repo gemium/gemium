@@ -15,11 +15,11 @@
   "license": "MIT",
   "devDependencies": {
     "chokidar": "^3.5.1",
-    "electron": "^11.3.0",
-    "electron-builder": "^22.9.1"
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.5"
   },
   "dependencies": {
-    "@derhuerst/gemini": "^1.1.1",
+    "@derhuerst/gemini": "^1.2.0",
     "electron-debug": "^3.2.0",
     "electron-unhandled": "^3.0.2",
     "electron-util": "^0.14.2",

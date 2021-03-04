@@ -37,7 +37,7 @@ const createMainWindow = async () => {
         height: 600,
         width: 800,
         webPreferences: {
-            nodeIntegration: true
+            preload: path.resolve(__dirname, "preload.js")
         }
     })
 
