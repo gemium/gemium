@@ -1,6 +1,6 @@
 # Architecture
 
-The codebase can be split into three top-level components. The [main process](#main-process) launches the app using [Electron](https://electronjs.org). It provides a browser environment, so the [renderer process](#renderer-process) can display the interface. It also runs the [preload script](#preload-script), which defines a gemini-rendering API for the renderer's `window` object.
+The codebase can be split into three top-level components. The [main process](#main-process) launches the app using [Electron](https://electronjs.org). It provides a browser environment, so the [renderer process](#renderer-process) can display the interface. It also runs the [preload script](#preload-script), which defines a gemini-specific API for the renderer's `window` object.
 
 ## Main Process
 Located in `/index.js`
