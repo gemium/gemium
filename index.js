@@ -3,25 +3,28 @@ const { app, BrowserWindow } = require("electron");
 const { is } = require("electron-util");
 const unhandled = require("electron-unhandled");
 const debug = require("electron-debug");
-const { watch } = require("chokidar");
 
 unhandled();
 debug({showDevTools: false});
 
-try {
-    const watcher = watch(path.join(__dirname, "app"));
+if(is.development) {
+    const { watch } = require("chokidar");
 
-    watcher.on("change", () => {
-        for(const window_ of BrowserWindow.getAllWindows()) {
-            window_.webContents.reloadIgnoringCache();
+    try {
+        const watcher = watch(path.join(__dirname, "app"));
 
-            for(const view_ of window_.getBrowserViews()) {
-                view_.webContents.reloadIgnoringCache();
+        watcher.on("change", () => {
+            for(const window_ of BrowserWindow.getAllWindows()) {
+                window_.webContents.reloadIgnoringCache();
+
+                for(const view_ of window_.getBrowserViews()) {
+                    view_.webContents.reloadIgnoringCache();
+                }
             }
-        }
-    })
-} catch (error) {
-    throw new Error(error);
+        })
+    } catch (error) {
+        throw new Error(error);
+    }
 }
 
 app.setAppUserModelId("com.binyamingreen.gemium");
