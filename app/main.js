@@ -9,6 +9,25 @@ document.getElementById("address").addEventListener("keydown", (evt) => {
         range.selectNodeContents(root);
         range.deleteContents();
 
-        renderPage(evt.target.value);
+        navigate(evt.target.value);
     }
+})
+
+document.getElementById("page-last", () => {
+    const page = gemium.pages.getLast();
+    if(!!page) {
+        return navigate(page);
+    }
+})
+
+document.getElementById("page-next", () => {
+    const page = gemium.pages.getNext();
+    if(!!page) {
+        return navigate(page);
+    }
+})
+
+document.getElementById("refresh", () => {
+    const page = gemini.pages.getCurrent();
+    if(page) navigate(page, { save: false })
 })

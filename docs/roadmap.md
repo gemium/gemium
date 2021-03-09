@@ -22,6 +22,18 @@ Note: Visible elements, such as buttons and indicators, must be functional.
 4. Allow customizing the CSS
 
 
+## Pre-release (WIP)
+**Due**: May 2021 (?)
+
+**Summary**
+
+TBD
+
+**Requirements**
+
+1. App should pass the gemini client torture test (<gemini://gemini.conman.org/test/torture/>)
+
+
 ## Backlog
 > Miscellaneous tasks which haven't yet been assigned a milestone.
 

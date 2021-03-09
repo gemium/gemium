@@ -63,12 +63,13 @@ function createNode(token) {
 }
 
 
-function renderPage(url) {
-    gemium.getPage(url)
+function navigate(url, { save=true }) {
+    gemium.loadUrl(url)
     .then(ast => {
         ast.forEach(token => {
             root.appendChild(createNode(token));
         })
+        if(save) gemium.pages.didNavigate(url);
     }).catch(err => {
         throw new Error(err);
     })

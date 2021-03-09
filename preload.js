@@ -4,8 +4,12 @@ const { contextBridge } = require("electron");
 const fetch = require("./lib/fetch");
 const parse = require("./lib/parser");
 
-
-async function getPage(url) {
+/**
+ * Given a local or remote URL,
+ * @param {string} url url to fetch
+ * @returns {import("./lib/parser").Token[]} Array of token, with which to create the DOM
+ */
+async function load(url) {
     let doc;
 
     if(fs.existsSync(url)) {
@@ -22,19 +26,13 @@ async function getPage(url) {
     return ast;
 }
 
-function goBack() {
-    console.log("Going back...")
-}
-
-function goForward() {
-    console.log("Going forward...")
-}
-
-function refresh() {
-    console.log("Refreshing page...")
-}
-
 contextBridge.exposeInMainWorld("gemium", {
-    getPage: getPage,
-    // history: {},
+    loadUrl: load,
+
+    pages: {
+        getCurrent: () => {},
+        getLast: () => {},
+        getNext: () => {},
+        didNavigate: () => {}
+    }
 });
