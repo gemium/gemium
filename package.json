@@ -15,6 +15,7 @@
   "author": "Binyamin Aron Green (https://binyam.in/)",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.3.3",
     "chokidar": "^3.5.1",
     "electron": "^12.0.0",
     "electron-builder": "^22.10.5"

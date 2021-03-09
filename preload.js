@@ -1,8 +1,10 @@
 const fs = require("fs");
 const fileUrl = require("file-url");
 const { contextBridge } = require("electron");
+
 const fetch = require("./lib/fetch");
 const parse = require("./lib/parser");
+const Pages = require("./lib/pages");
 
 /**
  * Given a local or remote URL,
@@ -26,13 +28,15 @@ async function load(url) {
     return ast;
 }
 
+const pages = new Pages();
+
 contextBridge.exposeInMainWorld("gemium", {
     loadUrl: load,
-
     pages: {
-        getCurrent: () => {},
-        getLast: () => {},
-        getNext: () => {},
-        didNavigate: () => {}
+        current: () => pages.current,
+        toNext: () => pages.toNext(),
+        toLast: () => pages.toLast(),
+        to: (v) => pages.to(v),
+        _stack: () => pages.stack
     }
 });

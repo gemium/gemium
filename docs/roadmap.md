@@ -16,10 +16,11 @@ Note: Visible elements, such as buttons and indicators, must be functional.
 
 **Requirements**
 
-1. Browser navigation via toolbar (~~address~~, back button, forward button)
+1. ~~Browser navigation via toolbar (address, back button, forward button)~~
 2. Open gemini links in-app
-3. Refresh button should work
+3. ~~Refresh button should work~~
 4. Allow customizing the CSS
+5. implement ssl, or hide indicator
 
 
 ## Pre-release (WIP)
