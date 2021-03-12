@@ -1,11 +1,15 @@
 const path = require("path");
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, protocol, ipcMain } = require("electron");
 const { is } = require("electron-util");
 const unhandled = require("electron-unhandled");
 const debug = require("electron-debug");
 
 unhandled();
 debug({showDevTools: false});
+
+require('electron-context-menu')({
+    showSearchWithGoogle: false
+});
 
 if(is.development) {
     const { watch } = require("chokidar");
@@ -37,10 +41,11 @@ const createMainWindow = async () => {
     const win = new BrowserWindow({
         title: app.name,
         show: false,
-        height: 600,
-        width: 800,
+        height: 800,
+        width: 1200,
         webPreferences: {
-            preload: path.resolve(__dirname, "preload.js")
+            preload: path.resolve(__dirname, "preload.js"),
+            defaultEncoding: "utf-8"
         }
     })
 
@@ -53,6 +58,11 @@ const createMainWindow = async () => {
     win.on("closed", () => {
         mainWindow = undefined;
     })
+
+
+    const {goForward, goBack} = win.webContents;
+    ipcMain.on("pages:go-forward", goForward)
+    ipcMain.on("pages:go-back", goBack)
 
     await win.loadFile(path.join(__dirname, "app", "index.html"))
 
@@ -86,11 +96,19 @@ app.on("activate", async () => {
     }
 });
 
+
+protocol.registerSchemesAsPrivileged([
+    {scheme: "gemini", privileges: { standard: true }},
+]);
+
 (async () => {
-    // TODO open gemini links in-app
     try {
         await app.whenReady();
+
+        require("./lib/gemini").register(protocol);
+
         mainWindow = await createMainWindow();
+
         if(is.development) {
             mainWindow.show() // only for debugging
         }

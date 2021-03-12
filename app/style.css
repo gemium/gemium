@@ -86,7 +86,7 @@ header {
     outline: none;
 }
 
-main {
-    overflow: auto;
+iframe {
+    border: none;
     flex: 1;
 }

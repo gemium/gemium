@@ -17,10 +17,10 @@ Note: Visible elements, such as buttons and indicators, must be functional.
 **Requirements**
 
 1. ~~Browser navigation via toolbar (address, back button, forward button)~~
-2. Open gemini links in-app
+2. ~~Open gemini links in-app~~
 3. ~~Refresh button should work~~
 4. Allow customizing the CSS
-5. implement ssl, or hide indicator
+5. ~~implement ssl, or hide indicator~~
 
 
 ## Pre-release (WIP)
@@ -33,12 +33,12 @@ TBD
 **Requirements**
 
 1. App should pass the gemini client torture test (<gemini://gemini.conman.org/test/torture/>)
-
+2. assume protocol is "gemini://"
+3. bug: on-page links don't load into browser history
 
 ## Backlog
 > Miscellaneous tasks which haven't yet been assigned a milestone.
 
-- assume protocol is "gemini://"
 - show error messages in UI
 - UI for pages which can't load properly
   - eg. unsupported content-type

@@ -1,28 +1,38 @@
 if(!window.gemium) throw new Error("Gemium api not loaded");
 
+
+function open(url) {
+    const root = document.getElementById("root");
+
+    // The next line allows us to change the url of the iframe,
+    // without triggering "cross-origin" security issues
+    root.setAttribute("src", "about:blank")
+    setTimeout(() => {
+        root.contentWindow.open(url, "_self");
+    }, 250) // TODO shorter duration?
+}
+
+open("gemini://simbly.me")
+
+setTimeout(() => {
+    open("gemini://seirdy.one")
+}, 5000)
+
 // TODO typing suggestions based on user history
 document.getElementById("address").addEventListener("keydown", (evt) => {
     if(evt.code === "Enter") {
-        navigate(evt.target.value);
-        gemium.pages.to(evt.target.value);
+        open(evt.target.value)
     }
 })
 
 document.getElementById("page-last").addEventListener("click", () => {
-    const page = gemium.pages.toLast();
-    if(!!page) {
-        return navigate(page);
-    }
+    gemium.pages.goBack();
 })
 
 document.getElementById("page-next").addEventListener("click", () => {
-    const page = gemium.pages.toNext();
-    if(!!page) {
-        return navigate(page);
-    }
+    gemium.pages.goForward()
 })
 
 document.getElementById("page-refresh").addEventListener("click", () => {
-    const page = gemium.pages.current();
-    if(page) navigate(page);
+    location.reload();
 })
