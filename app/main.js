@@ -9,14 +9,8 @@ function open(url) {
     root.setAttribute("src", "about:blank")
     setTimeout(() => {
         root.contentWindow.open(url, "_self");
-    }, 250) // TODO shorter duration?
+    }, 50)
 }
-
-open("gemini://simbly.me")
-
-setTimeout(() => {
-    open("gemini://seirdy.one")
-}, 5000)
 
 // TODO typing suggestions based on user history
 document.getElementById("address").addEventListener("keydown", (evt) => {
