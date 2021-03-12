@@ -34,7 +34,6 @@ TBD
 
 1. App should pass the gemini client torture test (<gemini://gemini.conman.org/test/torture/>)
 2. assume protocol is "gemini://"
-3. bug: on-page links don't load into browser history
 
 ## Backlog
 > Miscellaneous tasks which haven't yet been assigned a milestone.
@@ -49,3 +48,6 @@ TBD
 - addressbar should show suggestions based on browser history
 - Verify SSL Certificate
 - Solidify "new tab page" content
+- bug: on-page links don't load into browser history
+- bug: local ("file" protocol) gemtext does not render as html
+- bug: on-page links don't update the address bar
