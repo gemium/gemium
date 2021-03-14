@@ -1,8 +1,8 @@
 // Reference: https://github.com/beakerbrowser/beaker
 
-const tokenize = require("./tokenize");
-const fetch = require("./fetch");
-const toHtml = require("./toHtml");
+const tokenize = require("./lib/tokenize");
+const fetch = require("./lib/fetch");
+const toHtml = require("./lib/toHtml");
 
 /** @param {import("electron").Protocol} protocol */
 function register(protocol) {

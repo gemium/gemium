@@ -63,6 +63,7 @@ function createNode(token) {
  */
 function toHtml(tokens) {
     const body = tokens.map(t => createNode(t)).join("");
+    // TODO move html template to separate file
     return `<!DOCTYPE html>
 <html lang="en">
 <head>

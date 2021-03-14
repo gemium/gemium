@@ -44,7 +44,7 @@ const createMainWindow = async () => {
         height: 800,
         width: 1200,
         webPreferences: {
-            preload: path.resolve(__dirname, "preload.js"),
+            preload: path.resolve(__dirname, "renderer", "preload.js"),
             defaultEncoding: "utf-8"
         }
     })
@@ -64,7 +64,7 @@ const createMainWindow = async () => {
     ipcMain.on("pages:go-forward", goForward)
     ipcMain.on("pages:go-back", goBack)
 
-    await win.loadFile(path.join(__dirname, "app", "index.html"))
+    await win.loadFile(path.join(__dirname, "renderer", "public", "index.html"))
 
     return win;
 }
@@ -105,7 +105,7 @@ protocol.registerSchemesAsPrivileged([
     try {
         await app.whenReady();
 
-        require("./lib/gemini").register(protocol);
+        require("./main/protocols/gemini").register(protocol);
 
         mainWindow = await createMainWindow();
 
