@@ -37,6 +37,10 @@ header {
     background-color: #ddd;
 }
 
+.btn[disabled] * {
+    filter: opacity(0.7);
+}
+
 .address {
     margin: 0 48px;
     padding: 6px 0 6px 8px;

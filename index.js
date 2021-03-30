@@ -15,7 +15,7 @@ if(is.development) {
     const { watch } = require("chokidar");
 
     try {
-        const watcher = watch(path.join(__dirname, "app"));
+        const watcher = watch(path.join(__dirname, "renderer", "public"));
 
         watcher.on("change", () => {
             for(const window_ of BrowserWindow.getAllWindows()) {
@@ -41,8 +41,8 @@ const createMainWindow = async () => {
     const win = new BrowserWindow({
         title: app.name,
         show: false,
-        height: 800,
-        width: 1200,
+        height: 600,
+        width: 800,
         webPreferences: {
             preload: path.resolve(__dirname, "renderer", "preload.js"),
             defaultEncoding: "utf-8"
