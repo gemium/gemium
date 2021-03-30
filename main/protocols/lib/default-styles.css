@@ -1,0 +1,18 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article {
+    width: 70ch;
+    margin: 8px auto;
+}
+
+pre {
+    background-color: #ddd;
+    padding: 8px;
+}
+
+blockquote {
+    border-left: 4px solid steelblue;
+    padding-left: 8px;
+}

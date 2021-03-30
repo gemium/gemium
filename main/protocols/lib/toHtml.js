@@ -63,31 +63,26 @@ function createNode(token) {
  */
 function toHtml(tokens) {
     const body = tokens.map(t => createNode(t)).join("");
-    // TODO move html template to separate file
+
+    const { app } = require("electron");
+    const {readFileSync, existsSync} = require("fs");
+    const {join} = require("path");
+
+    let css;
+    if(existsSync(join(app.getPath("userData"), "custom.css"))) {
+        css = readFileSync(join(app.getPath("userData"), "custom.css"), "utf-8");
+    } else {
+        css = readFileSync(join(__dirname, "default-styles.css"), "utf-8");
+    }
+
+    // TODO move html template to separate file (?)
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-    html {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    article {
-        width: 70ch;
-        margin: 8px auto;
-    }
-
-    pre {
-        background-color: #ddd;
-        padding: 8px;
-    }
-
-    blockquote {
-        border-left: 4px solid steelblue;
-        padding-left: 8px;
-    }
+    ${css}
     </style>
 </head>
 <body><article>${body}</article></body>

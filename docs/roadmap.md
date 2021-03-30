@@ -19,7 +19,7 @@ Note: Visible elements, such as buttons and indicators, must be functional.
 1. ~~Browser navigation via toolbar (address, back button, forward button)~~
 2. ~~Open gemini links in-app~~
 3. ~~Refresh button should work~~
-4. Allow customizing the CSS
+4. ~~Allow customizing the CSS~~
 5. ~~implement ssl, or hide indicator~~
 
 
@@ -51,3 +51,4 @@ TBD
 - bug: on-page links don't load into browser history
 - bug: local ("file" protocol) gemtext does not render as html
 - bug: on-page links don't update the address bar
+- UI for displaying multiple pages as tabs
