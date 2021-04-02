@@ -4,43 +4,27 @@ This document details the current plan for Gemium. It should give you an idea of
 
 Thanks goes to [this article by mozilla about roadmapping](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/start-your-project-roadmap/#prototyping).
 
+Note: Visible elements, such as buttons and indicators, must be functional. For every milestone.
 
-## Current Milestone
-**Due**: April 2021
-
-**Summary**
-
-Create an MVP ("Minimum Viable Product"). "The MVP is a stripped down but functional version of your project that’s ready for use" ([source](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/start-your-project-roadmap/#prototyping)).
-
-Note: Visible elements, such as buttons and indicators, must be functional.
+## Current milestone (0.2.0)
+**Due**: May 1, 2021
 
 **Requirements**
 
-1. ~~Browser navigation via toolbar (address, back button, forward button)~~
-2. ~~Open gemini links in-app~~
-3. ~~Refresh button should work~~
-4. ~~Allow customizing the CSS~~
-5. ~~implement ssl, or hide indicator~~
+1. show error messages in UI
+2. UI for pages which can't load properly (eg. unsupported content-type)
+3. assume protocol is "gemini://"
+4. bug: on-page links don't update the address bar
+5. bug: on-page links don't load into browser history
 
+## Upcoming Milestone (0.3.0)
+**Due**: June 1, 2021
 
-## Pre-release (WIP)
-**Due**: May 2021 (?)
-
-**Summary**
-
-TBD
-
-**Requirements**
-
-1. App should pass the gemini client torture test (<gemini://gemini.conman.org/test/torture/>)
-2. assume protocol is "gemini://"
+**Requirements**: TBD
 
 ## Backlog
 > Miscellaneous tasks which haven't yet been assigned a milestone.
 
-- show error messages in UI
-- UI for pages which can't load properly
-  - eg. unsupported content-type
 - differentiate between link types (and add CSS classes)
   - external vs. internal
   - document vs. tel/mailto
@@ -48,7 +32,6 @@ TBD
 - addressbar should show suggestions based on browser history
 - Verify SSL Certificate
 - Solidify "new tab page" content
-- bug: on-page links don't load into browser history
 - bug: local ("file" protocol) gemtext does not render as html
-- bug: on-page links don't update the address bar
 - UI for displaying multiple pages as tabs
+- App should pass the gemini client torture test (<gemini://gemini.conman.org/test/torture/>)
