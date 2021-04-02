@@ -1,5 +1,7 @@
 # Gemium
-> A pretty (imho) desktop app for browsing the gemini universe.
+A pretty (imho) desktop app for browsing the gemini universe.
+
+> Note: Gemium is **pre-alpha**. Essentially, the app is not very user-friendly or intuitive. See [./roadmap](./roadmap) for a rough timeline.
 
 ## About
 ### Goals
@@ -11,6 +13,12 @@
 * [Project Gemini (official site)](https://gemini.circumlunar.space/)
 * [Lagrange](https://gmi.skyjake.fi/lagrange/) - desktop GUI browser
 * [Awesome Gemini](https://github.com/kr1sp1n/awesome-gemini)
+
+### Screenshot
+
+<img width="70%" src="./resources/screenshot.png" alt="Very unhelpful screenshot, showing that the browser styles are your choice" />
+
+###### I know it's unhelpful, but the browser styles are your choice :smile:
 
 ## Develop
 Requires [Node.js](https://nodejs.dev) and [Git](https://git-scm.com/).
