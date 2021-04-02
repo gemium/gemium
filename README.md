@@ -1,7 +1,7 @@
 # Gemium
 A pretty (imho) desktop app for browsing the gemini universe.
 
-> Note: Gemium is **pre-alpha**. Essentially, the app is not very user-friendly or intuitive. See [./roadmap](./roadmap) for a rough timeline.
+> Note: Gemium is **pre-alpha**. Essentially, the app is not very user-friendly or intuitive. See [/docs/roadmap](/docs/roadmap) for a rough timeline.
 
 ## About
 ### Goals
